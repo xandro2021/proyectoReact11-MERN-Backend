@@ -1,0 +1,55 @@
+#+title: React & NextJS/Prisma
+
+* About
++ The backend for a Full Stack Project using MERN
+
+* Dependencies
+** Express
+#+begin_src bash
+npm i express
+#+end_src
+** Axios
++ Consuming API with axios to simplify the code
+#+begin_src bash
+npm i axios
+#+end_src
+** TailwindCSS
+*** Installation
+#+begin_src bash
+npm i -D tailwindcss postcss autoprefixer
+#+end_src
+*** Configuration
+**** Step 01
+The following command will create two config files: tailwind.config.js and postcss.config.js
+#+begin_src bash
+npx tailwindcss init -p
+#+end_src
+**** Step 02
+Look for the file src/index.css that was created by vite and add the following commands
+#+begin_src css
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+#+end_src
+**** Step 03
+Open the file named tailwind.config.js that was created in the first step, and change it with the following content
+#+begin_src js
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: [
+    "./pages/**/*.{js,ts,jsx,tsx}",
+    "./layout/**/*.{js,ts,jsx,tsx}",
+    "./components/**/*.{js,ts,jsx,tsx}"
+  ],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+}
+#+end_src
+* Extra notes
+** Start to Set Project
+#+begin_src bash
+npm init
+#+end_src
+* Deployment
