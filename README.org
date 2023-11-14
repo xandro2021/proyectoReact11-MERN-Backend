@@ -8,6 +8,11 @@
 #+begin_src bash
 npm i express
 #+end_src
+** Nodemon
++ To restart the server everytime something is changed
+#+begin_src bash
+npm i -D nodemon
+#+end_src
 ** Axios
 + Consuming API with axios to simplify the code
 #+begin_src bash
