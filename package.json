@@ -1,0 +1,22 @@
+{
+  "name": "proyectoreact11-mern-backend",
+  "version": "1.0.0",
+  "description": "The Backend for a Full Stack project using MERN",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/xandro2021/proyectoReact11-MERN-Backend.git"
+  },
+  "author": "xandro2021",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/xandro2021/proyectoReact11-MERN-Backend/issues"
+  },
+  "homepage": "https://github.com/xandro2021/proyectoReact11-MERN-Backend#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
