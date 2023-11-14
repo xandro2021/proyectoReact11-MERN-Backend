@@ -1,4 +1,4 @@
-#+title: React & NextJS/Prisma
+#+title: MERN Stack Project (Backend)
 
 * About
 + The backend for a Full Stack Project using MERN
