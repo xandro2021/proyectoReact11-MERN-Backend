@@ -4,6 +4,8 @@ import conectarDB from './config/db.js';
 import usuarioRoutes from './routes/usuarioRoutes.js';
 
 const app = express();
+// Habilito la lectura de json para poder ver el body de los request de tipo post
+app.use(express.json());
 
 dotenv.config();
 
