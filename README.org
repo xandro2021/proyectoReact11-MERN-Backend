@@ -13,6 +13,15 @@ npm i express
 #+begin_src bash
 npm i -D nodemon
 #+end_src
+** Mongoose
++ To connect the backend with MongoDB
+#+begin_src bash
+npm i mongoose
+#+end_src
+** dotenv
+#+begin_src bash
+npm i dotenv
+#+end_src
 ** Axios
 + Consuming API with axios to simplify the code
 #+begin_src bash
