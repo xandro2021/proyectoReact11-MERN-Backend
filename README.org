@@ -26,6 +26,11 @@ npm i dotenv
 #+begin_src bash
 npm i bcrypt
 #+end_src
+** JSON WEB TOKEN
++ Don't use it to deal with sensitive information
+#+begin_src bash
+npm i jsonwebtoken
+#+end_src
 * Extra notes
 ** Start to Set Project
 #+begin_src bash
