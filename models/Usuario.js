@@ -48,6 +48,12 @@ usuarioSchema.pre('save', async function(next) {
   this.password = await bcrypt.hash(this.password, salt);
 })
 
+// Crear mi propio metodo para el schema usando methods
+usuarioSchema.methods.comprobarPassword = async function(passwordFormulario) {
+  // Comparo el password formulario con el password que tiene el objeto de la base de datos
+  return await bcrypt.compare(passwordFormulario, this.password);
+}
+
 const Usuario = mongoose.model('Usuario', usuarioSchema);
 
 export default Usuario;
