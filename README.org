@@ -22,6 +22,10 @@ npm i mongoose
 #+begin_src bash
 npm i dotenv
 #+end_src
+** Bcrypt (To hash user passwords)
+#+begin_src bash
+npm i bcrypt
+#+end_src
 * Extra notes
 ** Start to Set Project
 #+begin_src bash
