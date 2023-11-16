@@ -21,7 +21,7 @@ const registrar = async (req, res) => {
     // Almaceno el registro en la instancia (Tabla)
     const usuarioAlmacenado = await usuario.save();
 
-    res.json(usuarioAlmacenado);
+    res.status(200).json(usuarioAlmacenado);
   }
   catch (error) {
     console.log(error);
@@ -60,7 +60,38 @@ const autenticar = async (req, res) => {
   }
 };
 
+const confirmar = async (req, res) => {
+  // El nombre es asignado igual a la palabra que tenia los : como :token
+  const { token } = req.params;
+  // Busco en la base de datos el usuario que tenga ese token que le habiamos asignado al crearlo. Este es el generado por Id
+  const usuarioConfirmar = await Usuario.findOne({ token });
+
+  // Si la base de datos no devuelve ningun valor es que no habia usuario que tuviera ese token
+  if (!usuarioConfirmar) {
+    const error = new Error('Token no valido');
+    // Detenemos la ejecucion de la funcion y se envia un mensaje de error
+    return res.status(403).json({ msg: error.message });
+  }
+
+  try {
+    // Una vez confirmado se cambia las propiedades respectivas
+    usuarioConfirmar.confirmado = true;
+    // Se elimina el token porque es de un solo uso
+    usuarioConfirmar.token = '';
+    // Almacena el objeto modificado en la base de datos
+    await usuarioConfirmar.save();
+
+    // Envio la respuesta al cliente sobre la finalizacion correcta de la operacion
+    res.status(200).json({ msg: 'Usuario Confirmado Correctamente' });
+  }
+  catch (error) {
+    console.log(error);
+  }
+
+};
+
 export {
   registrar,
   autenticar,
+  confirmar,
 }
