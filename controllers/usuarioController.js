@@ -44,7 +44,19 @@ const autenticar = async (req, res) => {
     return res.status(403).json({ msg: error.message });
   }
 
-  // Comprobar el Password
+  // Comprobar el Password, usando la funcion propia creada en el modelo
+  if (await usuario.comprobarPassword(password)) {
+    res.json({
+      _id: usuario._id,
+      nombre: usuario.nombre,
+      email: usuario.email,
+      token: generarJWT(usuario._id),
+    })
+  }
+  else {
+    const error = new Error('El password es incorrecto');
+    return res.status(403).json({ msg: error.message });
+  }
 };
 
 export {
